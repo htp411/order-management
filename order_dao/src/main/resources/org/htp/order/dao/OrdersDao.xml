@@ -1,0 +1,111 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="org.htp.order.dao.OrdersDao">
+    <resultMap id="ordersResultMapper" type="Orders">
+        <id property="id" column="id"/>
+        <result property="createTime" column="create_time"/>
+        <result property="deliveryTime" column="delivery_time"/>
+        <result property="channel" column="shipping_channel"/>
+        <result property="trackingNumber" column="tracking_number"/>
+        <result property="orderStatus" column="order_status"/>
+        <result property="productName" column="product_name"/>
+        <result property="productOnlineSku" column="product_online_sku"/>
+        <result property="productLinkSku" column="product_link_sku"/>
+        <result property="productPrice" column="product_price"/>
+        <result property="productQuantity" column="product_quantity"/>
+        <result property="productImageUrl" column="product_image_url"/>
+        <result property="username" column="username"/>
+        <result property="tel" column="tel"/>
+        <result property="country" column="country"/>
+        <result property="state" column="state"/>
+        <result property="city" column="city"/>
+        <result property="address" column="address"/>
+        <result property="zipCode" column="zip_code"/>
+    </resultMap>
+    <update id="update" parameterType="Orders">
+        update orders set product_link_sku = #{productLinkSku},shipping_channel = #{channel}
+                          ,tracking_number = #{trackingNumber},username = #{username},tel = #{tel}
+                          ,country = #{country},state = #{state},city = #{city},address = #{address}
+                          ,zip_code = #{zipCode},product_image_url = #{productImageUrl}
+        where id = #{id}
+    </update>
+    <update id="deliveryOrder" parameterType="Orders">
+        update orders set shipping_channel = #{channel},tracking_number = #{trackingNumber},
+                          order_status = #{orderStatus},delivery_time = #{deliveryTime}
+        where id = #{id}
+    </update>
+    <insert id="batchInsert" parameterType="java.util.List" useGeneratedKeys="false">
+        insert into orders values
+        <foreach collection="list" item="order" index="index" separator=",">
+             (#{order.id},#{order.createTime},#{order.deliveryTime},#{order.channel},#{order.trackingNumber}
+              ,#{order.orderStatus},#{order.productName},#{order.productOnlineSku},#{order.productLinkSku}
+              ,#{order.productPrice},#{order.productQuantity},#{order.productImageUrl},#{order.username},#{order.tel},#{order.country}
+              ,#{order.state},#{order.city},#{order.address},#{order.zipCode})
+        </foreach>
+    </insert>
+    <insert id="insert" parameterType="Orders" useGeneratedKeys="false">
+        insert into orders
+        (id,product_online_sku,product_link_sku,product_price,product_quantity,username,tel,country,state,city,zip_code,address,create_time,order_status,product_image_url)
+        values
+        (#{id},#{productOnlineSku},#{productLinkSku},#{productPrice},#{productQuantity},#{username},#{tel},#{country},#{state},#{city},#{zipCode},#{address},#{createTime},#{orderStatus},#{productImageUrl})
+    </insert>
+    <select id="selectAll" resultMap="ordersResultMapper">
+        select * from orders order by create_time desc
+    </select>
+    <select id="search" resultMap="ordersResultMapper" parameterType="org.htp.order.entity.SearchOrders">
+        select * from orders where 1=1
+        <if test="option == 'id' and option_detail != ''">
+            and id = #{option_detail}
+        </if>
+        <if test="option == 'online_sku' and option_detail != ''">
+            and product_online_sku = #{option_detail}
+        </if>
+        <if test="option == 'tracking_number' and option_detail != ''">
+            and tracking_number = #{option_detail}
+        </if>
+        <if test="option == 'username' and option_detail != ''">
+            and username = #{option_detail}
+        </if>
+        <if test="country != null and country != '' ">
+            and country = #{country}
+        </if>
+        <if test="start !='' and end  !='' ">
+            and create_time &gt;= #{start} and create_time &lt;= #{end}
+        </if>
+        <if test="order_status != ''">
+            and order_status = #{order_status}
+        </if>
+        order by create_time desc
+    </select>
+    <select id="selectById" parameterType="String" resultMap="ordersResultMapper">
+        select * from orders where id = #{id}
+        order by create_time desc
+    </select>
+    <select id="selectByIds" parameterType="java.util.List" resultMap="ordersResultMapper">
+        select * from orders where id in
+        <foreach collection="list" item="idDto" open="(" close=")" separator=",">
+            #{idDto.id}
+        </foreach>
+        order by create_time desc
+    </select>
+    <select id="selectByStatus" parameterType="String" resultMap="ordersResultMapper">
+        select * from orders where order_status = #{orderStatus}
+        order by create_time desc
+    </select>
+    <select id="selectByStatus1" parameterType="org.htp.order.entity.SearchOrders" resultMap="ordersResultMapper">
+        select * from orders where order_status = #{order_status} or order_status = '已退款'
+        order by create_time desc
+    </select>
+    <select id="selectByTime" parameterType="java.util.Date" resultMap="ordersResultMapper">
+        select product_link_sku,product_quantity from orders where create_time &gt;= #{time}
+        order by create_time desc
+    </select>
+    <select id="getTotal" resultType="int">
+        select count(*) from orders
+    </select>
+    <select id="getPending" resultType="int">
+        select count(*) from orders where order_status = '待发货'
+    </select>
+</mapper>

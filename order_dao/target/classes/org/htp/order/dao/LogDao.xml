@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="org.htp.order.dao.LogDao">
+    <resultMap id="logResultMapper" type="Log">
+        <result property="type" column="type"/>
+        <result property="operatingTime" column="operating_time"/>
+        <result property="module" column="module"/>
+        <result property="operator" column="operator"/>
+        <result property="operating" column="operating"/>
+        <result property="result" column="result"/>
+    </resultMap>
+    <select id="select" resultMap="logResultMapper">
+        select * from log
+        order by operating_time desc
+    </select>
+    <select id="selectByOption" resultMap="logResultMapper">
+        select * from log where 1=1
+        <if test="module != null and module != ''">
+            and module = #{module}
+        </if>
+        <if test="start != null and start != '' and end != null and end != ''">
+            and #{start} &lt;= operating_time  and #{end} &gt;= operating_time
+        </if>
+        order by operating_time desc
+    </select>
+    <insert id="insert" parameterType="Log">
+        insert into log values(#{type},#{operatingTime},#{module},#{operator},#{operating},#{result})
+    </insert>
+</mapper>

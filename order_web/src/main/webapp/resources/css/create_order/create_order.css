@@ -1,0 +1,65 @@
+.create_order .form{
+	display: block;
+}
+.create_order .panel{
+	width: 75%;
+	min-width: 800px;
+	margin: 20px auto;
+	border:1px solid #f0f0f0;
+	padding-bottom: 20px;
+}
+.create_order .panel-heading{
+	background-color:#efefef;
+	font-weight: bolder;
+	height: 40px;
+	display: flex;
+	-ms-align-items: center;
+	align-items: center;
+}
+.create_order .panel-heading h5{
+	font-size: 16px;
+	font-weight: normal;
+}
+.create_order .panel-body span{
+	font-weight: 400;
+	font-size: 13px;
+	color: #233;
+}
+.create_order .panel-body label{
+	margin-top: 20px;
+	display: flex;
+	-ms-align-items: center;
+	align-items: center;
+}
+.create_order .panel-body label span{
+	width: 70px;
+}
+.create_order .panel-body label input.full-length{
+	display: inline-block;
+ 	width: 490px;
+}
+.create_order .input-required:after{
+	display: inline-block;
+	height: 5px;
+	width: 5px;
+	font-size: 16px;
+	font-weight: bolder;
+	content: '*';
+	margin-left:5px;
+	color:rgb(213,85,77);
+	margin-right: 45px;
+}
+.create_order .form-footer{
+	display: flex;
+	-ms-align-items: center;
+	align-items: center;
+	justify-content: center;
+	padding: 10px 0 50px 0;
+}
+.create_order .form-footer button{
+	width: 70px;
+	margin:10px;
+}
+/*
+	通用
+ */

@@ -1,0 +1,106 @@
+.purchase-container .product-image{
+	padding: 5px;
+	width: 80px;
+	height: 80px;
+	background-color: #fafafa;
+	border: 1px solid #cfcfcf;
+	border-radius: 3px;
+	box-shadow: 1px 1px 2px 2px #efefef;
+}
+.purchase-container .product-image img{
+	width:70px;
+}
+#purchase-details .purchase-form{
+	 display: flex;
+	 -ms-align-items: center;
+	 align-items: center;
+	 justify-content: space-between;
+	 padding:10px 10px 130px 15px;
+	 position: relative;
+ }
+#purchase-details .purchase-form.edit{
+	display: flex;
+	-ms-align-items: center;
+	align-items: center;
+	justify-content: space-between;
+	padding:10px 10px 65px 15px;
+	position: relative;
+}
+#purchase-details .purchase-info{
+	display: flex;
+	flex-direction: column;
+	padding: 10px;
+}
+#purchase-details .purchase-info label{
+	font-weight: 500;
+	margin-top: 20px;
+}
+#purchase-details .product-info{
+	height: 110px;
+	width: 110px;
+	padding:10px;
+	border:1px solid #dfdfdf;
+	border-radius: 5px;
+	background-color: #f9f9f9;
+	display: flex;
+	justify-content: space-between;
+	flex-direction: column;
+	transform: translate(-50px,8px);
+}
+#purchase-details .product-info .product-image,#inventory-details .product-info .product-image{
+	width: 100%;
+	align-self: flex-end;
+	display: flex;
+	justify-content: center;
+}
+#purchase-details .product-info img,#inventory-details .product-info img{
+	width: 65px;
+	height: 65px;
+}
+#purchase-details .product-info span,#inventory-details .product-info span{
+	font-size: 12px;
+	height: 15px;
+	line-height: 15px;
+	display: inline-block;
+	width: 98%;
+	overflow: hidden;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+    margin-top: 10px;
+}
+#inventory-details .purchase-form{
+	display: flex;
+	align-items: center;
+	padding: 20px 90px;
+	justify-content: space-between;
+}
+#inventory-details .purchase-form .product-image{
+	width: 80px;
+	height: 80px;
+	padding: 5px;
+	background-color: #fafafa;
+	border: 1px solid #cfcfcf;
+	border-radius: 3px;
+	box-shadow: 1px 1px 2px 2px #efefef;
+}
+#inventory-details .purchase-form .default-inventory{
+	transform: translate(-85px,15px);
+}
+#inventory-details .purchase-form .default-inventory label{
+	display: flex;
+	align-items: center;
+	margin-left: 30px;
+
+}
+#inventory-details .purchase-form .default-inventory label span{
+	font-weight: 500;
+	width: 100px;
+	transform: translate(24px,0);
+}
+#inventory-details .purchase-form .default-inventory label input{
+	order:0;
+	width: 70px;
+}
+.product-info{
+	width: 120px;
+}

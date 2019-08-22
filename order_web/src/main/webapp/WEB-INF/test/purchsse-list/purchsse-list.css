@@ -1,0 +1,42 @@
+.purchase-container{
+	display: flex;
+	flex-direction: column;
+	width: 92%;
+	margin:0 auto;
+	padding-bottom: 60px;
+}
+.purchase-container .form{
+	margin-top: 10px;
+	align-self: flex-end;
+}
+.purchase-container table{
+	margin-top: 20px;
+}
+.purchase-container table tbody tr td{
+	vertical-align: middle;
+}
+.purchase-container .product-info{
+	display: flex;
+}
+.purchase-container .product-info .product-other{
+	display: flex;
+	flex-direction: column;
+	margin-left: 20px;
+}
+.purchase-container .product-other span{
+	margin-bottom: 2px;
+}
+.purchase-container .product-other span.sku{
+	color: rgb(66,139,202);
+	font-weight: 600;
+}
+.purchase-container .operating{
+	display: flex;
+	justify-content: center;
+}
+.purchase-container .operating button{
+	margin-right: 20px;
+}
+.purchase-list{
+	margin-bottom: 60px;
+}

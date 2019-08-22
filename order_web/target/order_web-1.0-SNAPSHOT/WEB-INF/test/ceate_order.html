@@ -1,0 +1,182 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>首页</title>
+	<meta charset="utf-8">
+	<link rel="shortcut icon" type="image/x-icon" href="../../resources/images/icon.png" />
+	<link rel="stylesheet" href="../../resources/bootstrap/bootstrap.css">
+	<link rel="stylesheet" href="lib/reset.css">
+	<link rel="stylesheet" href="../../resources/fonts/iconfont.css">
+	<link rel="stylesheet" href="header/header.css">
+	<link rel="stylesheet" href="hide-details/hide-details.css">
+	<link rel="stylesheet" href="index.css">
+	<link rel="stylesheet" href="order_list.css">
+	<link rel="stylesheet" href="page-bar/page-bar.css">
+	<link rel="stylesheet" href="create_order/create_order.css">
+</head>
+<body>
+<header id="header" class="header clearfix">
+	<div class="logo clearfix">
+		<span>
+			<i class="iconfont icon-dingdanguanli"></i>
+		</span>
+		<span class="separate title">Wish订单管理助手</span>
+	</div>
+	<nav class="header-nav">
+		<ul class="nav-bar">
+			<li class="nav-ul-item"><a class="active">首页</a></li>
+			<li class="nav-ul-item">
+				<a>订单</a>
+				<div class="triangle"></div>
+				<div class="hide-details order">
+					<ul class="details-items">
+						<li class="details-item">
+							<label>创建订单</label><span><a>导入订单</a></span><span><a>手工创建</a></span>
+						</li>
+						<li class="details-item">
+							<label>查看订单</label><span><a>全部订单</a></span>
+						</li>
+					</ul>
+				</div>
+			</li>
+			<li class="nav-ul-item">
+				<a>商品</a>
+				<div class="triangle"></div>
+				<div class="hide-details order">
+					<ul class="details-items">
+						<li class="details-item">
+							<label>商品管理</label><span><a>商品管理</a></span>
+						</li>
+					</ul>
+				</div>
+			</li>
+			<li class="nav-ul-item">
+				<a>采购</a>
+				<div class="triangle"></div>
+				<div class="hide-details order">
+					<ul class="details-items">
+						<li class="details-item">
+							<label>采购管理</label><span><a>新建采购</a></span>
+						</li>
+						<li class="details-item">
+							<label>采购记录</label><span><a>采购记录</a></span>
+						</li>
+					</ul>
+				</div>
+			</li>
+			<li class="nav-ul-item">
+				<a>库存</a>
+				<div class="triangle"></div>
+				<div class="hide-details order">
+					<ul class="details-items">
+						<li class="details-item">
+							<label>库存清单</label><span><a>库存清单</a></span>
+						</li>
+						<li class="details-item">
+							<label>库存管理</label><span><a>出入库</a></span>
+						</li>
+					</ul>
+				</div>
+			</li>
+			<li class="nav-ul-item">
+				<a>数据</a>
+				<div class="triangle"></div>
+				<div class="hide-details order">
+					<ul class="details-items">
+						<li class="details-item">
+							<label>操作记录</label><span><a>操作日志</a></span>
+						</li>
+					</ul>
+				</div>
+			</li>
+		</ul>
+	</nav>
+</header><!-- /header -->
+<div class="order-container">
+	<div class="top-tips">
+		<h4 class="">订单<span>/</span>手工创建</h4>
+	</div>
+</div>
+<div class="create_order">
+		<form class="form" rol="form">
+			<div class="panel">
+				<div class="panel-heading">
+				<h5>订单信息</h5>
+				</div>
+				<div class="panel-body">
+					<label class="form-inline">
+						<span>订单ID:</span>
+						<input type="text" name="id" class="form-control" required="ture">
+						<div class="input-required"></div>
+					</label>
+					<label class="form-inline">
+						<span>线上SKU:</span>
+						<input type="text" name="productOnlineSKU" class="form-control"  required="ture">
+						<div class="input-required"></div>
+						<span>关联SKU:</span>
+						<input type="text" name="productOnlineSKU" class="form-control"  required="ture">
+					</label>
+					<label class="form-inline">
+						<span>订单金额:</span>
+						<input type="text" name="productPrice" class="form-control"  required="ture">
+						<div class="input-required"></div>
+						<span>商品数量:</span>
+						<input type="text" name="productQuantity" class="form-control" required="ture">
+						<div class="input-required"></div>
+					</label>
+				</div>
+			</div>
+			<div class="panel">
+				<div class="panel-heading">
+				<h5>买家信息</h5>
+				</div>
+				<div class="panel-body">
+					<label class="form-inline">
+						<span>买家姓名:</span>
+						<input type="text" name="username" class="form-control" required="ture">
+						<div class="input-required"></div>
+					</label>
+					<label class="form-inline">
+						<span>电话/手机:</span>
+						<input type="text" name="tel" class="form-control"  required="ture">
+						<div class="input-required"></div>
+					</label>
+					<label class="form-inline">
+						<span>国家:</span>
+						<input type="text" name="country" class="form-control"  required="ture">
+						<div class="input-required"></div>
+						<span>省/州:</span>
+						<input type="text" name="productQuantity" class="form-control" required="ture">
+						<div class="input-required"></div>
+					</label>
+					<label class="form-inline">
+						<span>城市:</span>
+						<input type="text" name="city" class="form-control"  required="ture">
+						<div class="input-required"></div>
+						<span>邮编:</span>
+						<input type="text" name="ZipCode" class="form-control" required="ture">
+						<div class="input-required"></div>
+					</label>
+					<label class="form-inline">
+						<span>详细地址:</span>
+						<input type="text" name="address" class="form-control full-length" required="ture">
+						<div class="input-required"></div>
+					</label>
+				</div>
+			</div>
+			<div class="form-footer">
+				<button type="submit" class="btn btn-primary">创建订单</button>
+				<button type="button" id="reset" class="btn btn-danger">重置</button>
+			</div>
+		</form>
+	</div>
+<script src="../../resources/js/jquery-3.3.1.js"></script>
+<script src="../../resources/bootstrap/bootstrap.js"></script>
+<script src="header/header.js"></script>
+<script>
+    $('#reset').on('click',function(){
+    	$('input').val('');
+    });
+</script>
+</body>
+</html>

@@ -1,0 +1,122 @@
+/*
+	全局
+ */
+.top-tips{
+	display: flex;
+	-ms-align-items: center;
+	align-items: center;
+	width:100%;
+	height: 45px;
+	border-bottom: 1px solid #ccc;
+	padding-left: 60px;
+	background-color: #fff;
+}
+.top-tips h4{
+	font-size: 14px;
+	color: #666;
+}
+.top-tips h4 span{
+	font-size: 14px;
+	padding:0 4px;
+}
+.btn{
+	height: 28px;
+	font-size: 12px;
+	padding: 4px 12px;
+}
+.btn-default{
+	color: rgb(126,172,81);
+	border:1px solid rgb(126,172,81);
+}
+.btn-default:hover{
+	color: rgb(141,189,95);
+	border:1px solid rgb(141,189,95);
+	background-color:rgba(238,241,246,0.5);
+}
+.search-bar{
+	display: flex;
+	flex-direction: column;
+	flex-wrap: wrap;
+	width: 100%;
+}
+.form{
+	display: flex;
+	padding: 10px 0 3px 0;
+	margin-left: 60px;
+	-ms-align-items: center;
+	align-items: center;
+	width: 100%;
+}
+.search-tip{
+	padding:5px;
+	margin-bottom: 10px;
+	margin-left: 50px;
+}
+.search-tip span{
+	padding: 6px 8px;
+	margin-left: 5px;
+	border-radius: 3px;
+	color: #fff;
+	font-size: 10px;
+	background-color: rgb(248,148,6);
+}
+.form-control{
+	font-size: 12px;
+	height:30px;
+	color: #909090;
+	font-weight: normal;
+}
+.form-inline{
+	margin-right: 20px;
+
+}
+.container-item{
+	width: 100%;
+}
+.order-container .container-item{
+	width: 100%;
+	background-color: #fff;
+	padding:0 20px;
+	box-shadow:2px 2px #ececec;
+}
+.order-container .container-item table{
+	width: 95%;
+	margin:0 auto;
+}
+#all-order{
+    display: flex;
+    width: 100%;
+    flex-direction: column;
+	padding-bottom: 90px;
+	border-bottom: none;
+}
+#all-order .out-port{
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+    padding: 10px 50px 10px 0;
+}
+#all-order .out-port span{
+    height: 28px;
+    padding: 4px 6px 4px 8px;
+    background-color: rgb(209,42,38);
+    color: #fff;
+    font-size: 12px;
+    margin-right: 10px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+	border-radius:3px;
+}
+.order-table .info-status{
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	transform: translateY(5px);
+}
+.cover_bottom-line{
+	width: 100%;
+	height: 60px;
+	background-color: #fff;
+	bottom: -60px;
+}

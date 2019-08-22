@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="org.htp.order.dao.ProductDao">
+    <resultMap id="productResultMapper" type="Product">
+        <id property="id" column="id"/>
+        <id property="sku" column="sku"/>
+        <result property="name" column="name"/>
+        <result property="nickname" column="nickname"/>
+        <result property="price" column="price"/>
+        <result property="imageUrl" column="image_url"/>
+        <result property="note" column="note"/>
+        <result property="createTime" column="create_time"/>
+    </resultMap>
+    <select id="selectAll" resultMap="productResultMapper">
+        select * from products
+        order by create_time desc
+    </select>
+    <select id="selectBySku" parameterType="String" resultMap="productResultMapper">
+        select * from products where sku = #{sku}
+        order by create_time desc
+    </select>
+    <select id="getBySearchOption" parameterType="String" resultMap="productResultMapper">
+        select * from products where 1=1
+        <if test="_parameter != null and _parameter != ''">
+            and (
+            sku like CONCAT("%",#{_parameter},"%")
+            or name like CONCAT("%",#{_parameter},"%")
+            or nickname like CONCAT("%",#{_parameter},"%")
+            )
+        </if>
+        order by create_time desc
+    </select>
+    <insert id="addProduct" parameterType="java.util.List" useGeneratedKeys="true">
+        insert into products(sku,name,nickname,price,image_url,note,create_time) values
+        <foreach collection="list" item="product" separator=",">
+            (#{product.sku},#{product.name},#{product.nickname},
+            #{product.price},#{product.imageUrl},#{product.note},#{product.createTime})
+        </foreach>
+    </insert>
+    <update id="update" parameterType="Product">
+        update products set sku=#{sku},price=#{price},name=#{name},nickname=#{nickname},
+                        <if test="imageUrl != '' and imageUrl != null">image_url=#{imageUrl},</if>
+                        note=#{note}
+                        where id = #{id}
+    </update>
+    <delete id="delete" parameterType="String">
+        delete from products where sku = #{sku}
+    </delete>
+    <delete id="batchDelete" parameterType="java.util.List">
+        delete from products where sku in
+            <foreach collection="list" open="(" close=")" separator="," item="idDto">
+                #{idDto.id}
+            </foreach>
+    </delete>
+
+</mapper>

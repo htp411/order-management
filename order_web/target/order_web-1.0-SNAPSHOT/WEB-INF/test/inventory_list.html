@@ -1,0 +1,194 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>首页</title>
+	<meta charset="utf-8">
+	<link rel="shortcut icon" type="image/x-icon" href="../../resources/images/icon.png" />
+	<link rel="stylesheet" href="../../resources/bootstrap/bootstrap.css">
+	<link rel="stylesheet" href="lib/reset.css">
+	<link rel="stylesheet" href="../../resources/fonts/iconfont.css">
+	<link rel="stylesheet" href="header/header.css">
+	<link rel="stylesheet" href="hide-details/hide-details.css">
+	<link rel="stylesheet" href="index.css">
+	<link rel="stylesheet" href="order_list.css">
+	<link rel="stylesheet" href="page-bar/page-bar.css">
+	<link rel="stylesheet" href="prompt_window/prompt_window.css">
+	<link rel="stylesheet" href="product_list/product_list.css">
+	<link rel="stylesheet" href="purchsse-list/purchsse-list.css">
+	<link rel="stylesheet" href="inventory_list/inventory_list.css">
+</head>
+<body>
+<header id="header" class="header clearfix">
+	<div class="logo clearfix">
+		<span>
+			<i class="iconfont icon-dingdanguanli"></i>
+		</span>
+		<span class="separate title">Wish订单管理助手</span>
+	</div>
+	<nav class="header-nav">
+		<ul class="nav-bar">
+			<li class="nav-ul-item"><a class="active">首页</a></li>
+			<li class="nav-ul-item">
+				<a>订单</a>
+				<div class="triangle"></div>
+				<div class="hide-details order">
+					<ul class="details-items">
+						<li class="details-item">
+							<label>创建订单</label><span><a>导入订单</a></span><span><a>手工创建</a></span>
+						</li>
+						<li class="details-item">
+							<label>查看订单</label><span><a>全部订单</a></span>
+						</li>
+					</ul>
+				</div>
+			</li>
+			<li class="nav-ul-item">
+				<a>商品</a>
+				<div class="triangle"></div>
+				<div class="hide-details order">
+					<ul class="details-items">
+						<li class="details-item">
+							<label>商品管理</label><span><a>商品管理</a></span>
+						</li>
+					</ul>
+				</div>
+			</li>
+			<li class="nav-ul-item">
+				<a>采购</a>
+				<div class="triangle"></div>
+				<div class="hide-details order">
+					<ul class="details-items">
+						<li class="details-item">
+							<label>采购管理</label><span><a>新建采购</a></span>
+						</li>
+						<li class="details-item">
+							<label>采购记录</label><span><a>采购记录</a></span>
+						</li>
+					</ul>
+				</div>
+			</li>
+			<li class="nav-ul-item">
+				<a>库存</a>
+				<div class="triangle"></div>
+				<div class="hide-details order">
+					<ul class="details-items">
+						<li class="details-item">
+							<label>库存清单</label><span><a>库存清单</a></span>
+						</li>
+						<li class="details-item">
+							<label>库存管理</label><span><a>出入库</a></span>
+						</li>
+					</ul>
+				</div>
+			</li>
+			<li class="nav-ul-item">
+				<a>数据</a>
+				<div class="triangle"></div>
+				<div class="hide-details order">
+					<ul class="details-items">
+						<li class="details-item">
+							<label>操作记录</label><span><a>操作日志</a></span>
+						</li>
+					</ul>
+				</div>
+			</li>
+		</ul>
+	</nav>
+</header><!-- /header -->
+<div class="order-container">
+	<div class="top-tips">
+		<h4 class="">库存<span>/</span>库存清单</h4>
+	</div>
+</div>
+<div class="inventory-container">
+	<form class="form pull-right clearfix" rol="form" method="post" action="search_purchsse">
+		<div class="form-inline">
+			<input type="text" class="form-control" name="search_option" placeholder="支持SKU/名称/别名搜索">
+			<button type="submit" class="btn btn-primary">搜索</button>
+		</div>
+	</form>
+	<div class="inventory-list">
+		<div class="product_oprating">
+			<button type="button" class="btn btn-success">新建采购单</button>
+			<button type="button" class="btn btn-warning">批量删除</button>
+		</div>
+		<table class="table table-striped table-hover table-bordered">
+			<thead>
+				<tr>
+					<th>商品信息</th>
+					<th>7天销量</th>
+					<th>30天销量</th>
+					<th>剩余库存</th>
+					<th>库存更新时间</th>
+					<th>操作</th>
+				</tr>
+			</thead>
+			<tbody>
+				<tr>
+					<td>
+						<div class="product-info">
+							<div class="product-image">
+								<img src="https://contestimg.wish.com/api/webimage/5c5c4fcf8ef79b4dd06062da-tiny.jpg?cache_buster=5de3cf09899c8b4df299ebec27da4acd" alt="">
+							</div>
+							<div class="other-info">
+								<span>Micro-PAX3-siliver</span>
+								<span>PAX3 银色</span>
+							</div>
+						</div>
+					</td>
+					<td>
+						<div class="">
+							<span>20</span>
+						</div>
+					</td>
+					<td>
+						<div class="">
+							<span>99</span>
+						</div>
+					</td>
+					<td>
+						<div class="">
+							<span>12</span>
+						</div>
+					</td>
+					<td>
+						<div>
+							<span>2019-04-21 17:23:36</span>
+						</div>
+					</td>
+					<td>
+						<div>
+							<button type="button" class="btn btn-primary">编辑库存</button>
+						</div>
+					</td>
+				</tr>
+			</tbody>
+		</table>
+	</div>
+</div>
+<div class="page-bar">
+	<ul class="pagination">
+		<li><a href="">首页</a></li>
+		<li><a href="">1</a></li>
+		<li><a href="">2</a></li>
+		<li><a href="">3</a></li>
+		<li><a href="">4</a></li>
+		<li><a href="">5</a></li>
+		<li><a href="">尾页</a></li>
+	</ul>
+	<div class="input-group">
+            <input type="text" class="form-control">
+            <span class="input-group-addon"><a href="http://www.baidu.com">跳转</a></span>
+    </div>
+</div>
+<script src="../../resources/js/jquery-3.3.1.js"></script>
+<script src="../../resources/bootstrap/bootstrap.js"></script>
+<script src="header/header.js"></script>
+<script>
+
+</script>
+<script>
+      
+</script>
+</body>
+</html>

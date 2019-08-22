@@ -1,0 +1,41 @@
+.product-container{
+	clear: left;
+	width: 95%;
+	margin:0 auto;
+	-ms-align-items: center;
+	align-items: center;
+	display: flex;
+	flex-direction: column;
+}
+.product-container .product_list{
+	width: 96%;
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	justify-content: center;
+}
+.product_list .product_oprating{
+	align-self: flex-start;
+	margin-bottom: 15px;
+}
+.product_list table tbody tr td{
+	vertical-align: middle;
+}
+#product-form{
+	display: block;
+    position: relative;
+}
+#form-inline{
+    position: absolute;
+    right: 0;
+	width: 100%;
+}
+.product_list .product-edit{
+	display: flex;
+	-ms-align-items: center;
+	align-items: center;
+	justify-content: center;
+}
+.product_list .product-edit button{
+	margin:0 10px;
+}

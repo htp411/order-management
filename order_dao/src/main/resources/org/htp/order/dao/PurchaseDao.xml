@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="org.htp.order.dao.PurchaseDao">
+    <resultMap id="purchaseResultMapper" type="Purchase">
+        <id property="id" column="id"/>
+        <result property="createTime" column="create_time"/>
+        <result property="status" column="status"/>
+        <result property="note" column="note"/>
+        <result property="linkSku" column="link_sku"/>
+        <result property="quantity" column="quantity"/>
+        <association property="product" column="link_sku" javaType="Product">
+            <id property="sku" column="p_sku"/>
+            <result property="name" column="p_name"/>
+            <result property="imageUrl" column="p_image_url"/>
+            <result property="price" column="p_price"/>
+        </association>
+    </resultMap>
+    <insert id="insert" parameterType="Purchase" useGeneratedKeys="false">
+        insert into purchase(id,status,note,link_sku,quantity,create_time)
+        values(#{id},#{status},#{note},#{linkSku},#{quantity},#{createTime})
+    </insert>
+    <select id="selectAll" resultMap="purchaseResultMapper">
+        SELECT pur.*,pro.sku AS p_sku,pro.name AS p_name,pro.image_url AS p_image_url,pro.price AS p_price
+        FROM purchase AS pur
+        LEFT JOIN products AS pro
+        ON pur.link_sku = pro.sku
+        ORDER BY pur.create_time DESC
+    </select>
+    <select id="selectBySku" resultMap="purchaseResultMapper" parameterType="String">
+        select pur.*,pro.sku as p_sku,pro.name as p_name,pro.image_url as p_image_url,pro.price as p_price
+        from purchase as pur
+        left join products as pro
+        on pur.link_sku = pro.sku and pro.sku like CONCAT("%",#{_parameter},"%")
+        order by pur.create_time desc
+    </select>
+    <select id="selectById" resultMap="purchaseResultMapper" parameterType="String">
+        select * from purchase where id = #{id}
+        order by purchase.create_time desc
+    </select>
+    <select id="getTotal" resultType="int">
+        select count(*) from purchase
+    </select>
+    <update id="update" parameterType="Purchase">
+        update purchase set note = #{note}
+        where id = #{id}
+    </update>
+    <update id="updateStatus" parameterType="String">
+        update purchase set status = #{status}
+        where id = #{id}
+    </update>
+</mapper>

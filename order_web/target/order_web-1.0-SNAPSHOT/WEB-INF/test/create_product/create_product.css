@@ -1,0 +1,55 @@
+.product-form{
+}
+.product-form .product-info{
+	margin:30px 0 30px 266px;
+	width:45%;
+}
+.create-product .product-form .panel{
+	width: 100%;
+	display: flex;
+	flex-direction: column;
+	margin-bottom: 30px;
+}
+.create-product .product-form .panel-heading{
+	background-color: #efefef;
+}
+.create-product .product-form .panel-body{
+	display: flex;
+	flex-direction: column;
+	border:1px solid #efefef;
+	border-bottom: none;
+}
+.product-info .add-product{
+	position: fixed;
+	right: 6%;
+	bottom: 12%;
+}
+.product-info .product{
+	display: flex;
+	flex-direction: column;
+}
+.product-info .submit-bar{
+	display: flex;
+	justify-content: center;
+}
+.product-info .submit-bar button{
+	margin: 10px 20px 50px 20px;
+}
+.product-info .product h5{
+	height: 50px;
+	padding: 10px;
+	line-height: 50px;
+	background-color: #efefef;
+}
+.product-info .product label{
+	padding:10px;
+}
+.product-info .product label c{
+	color: rgb(213,85,77);
+}
+.product-info .product label span{
+	font-weight: 400;
+}
+.long-input{
+	width: 45% !important;
+}

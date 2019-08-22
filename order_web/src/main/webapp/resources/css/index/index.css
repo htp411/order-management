@@ -1,0 +1,254 @@
+.order-container,.container{
+	width: 100%;
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	background-color:rgba(238,241,246,1);
+}
+.container .container-item{
+	width: 85%;
+	margin-top:30px;
+	background-color: #fff;
+	padding:10px 50px;
+	border-radius:15px;
+	box-shadow:2px 2px #ececec;
+}
+.container .quick-operating{
+	display: flex;
+	justify-content: space-between;
+	-ms-align-items: center;
+	align-items: center;
+	height: 120px;
+	padding:0 5px;
+	margin-bottom:10px;
+}
+.container .operating{
+	display: flex;
+	height: 85px;
+	width: 210px;
+	transition: all 0.5s;
+}
+.container .operating:hover{
+	height:95px;
+	width: 250px;
+	margin:0 20px;
+}
+.container .operating label{
+	height:100%;
+	width: 38%;
+	display: flex;
+	-ms-align-items: center;
+	align-items: center;
+	justify-content: center;
+	flex-direction: column;
+	border-radius:10px 0 0 10px;
+}
+.container .operating label p{
+	margin-top: 5px;
+	color: #fff;
+}
+.container .operating span{
+	flex: 1;
+	display: flex;
+	-ms-align-items: center;
+	align-items: center;
+	height: 100%;
+	margin-left: -1px;
+	border-radius:0 10px 10px 0;
+}
+.container .operating span p{
+	font-size: 24px;
+	color: #fff;
+	cursor: pointer;
+	margin-left: 36px;
+}
+.container .operating .icon-dingdan,.icon-yujing1,.icon-fahuo1,.icon-caigouguocheng{
+	font-size: 35px;
+	color: #fff;
+}
+/*
+	颜色、字体 start
+ */
+.container .order label{
+	background-color: rgb(26,127,194);
+}
+.container .order span{
+	background-color: rgb(57,151,213);
+}
+.container .shipping label{
+	background-color: rgb(126,172,81);
+}
+.container .shipping span{
+	background-color: rgb(141,189,95);
+}
+.container .purchase label{
+	background-color: rgb(255,170,52);
+}
+.container .purchase span{
+	background-color: rgb(255,189,97);
+}
+.container .pre-alert label{
+	background-color: rgb(209,42,38);
+}
+.container .pre-alert span{
+	background-color: rgb(213,85,77);
+}
+.container h4{
+	font-size: 18px;
+	font-weight: normal;
+	font-family: '宋体';
+	padding:0 0 10px 10px;
+	margin-bottom: 15px;
+	border-bottom: 1px solid #efefef;
+}
+table thead tr{
+ 	/*//background-color: rgba(23,162,184,0.4);*/
+	color: #678678;
+	font-weight: bold;
+}
+table{
+	font-family: sans serif;
+	color: #696969;
+	letter-spacing: 0.5px;
+}
+table .order{
+	font-family: "宋体";
+}
+.icon-denglu{
+	color: rgb(74,126,170);
+	padding-top: 2px;
+	font-size: 12px;
+}
+.icon-guojiapitchon{
+	color: rgb(74,126,170);
+	padding: 2px 6px 0 0;
+	font-size: 12px;
+}
+.icon-bianjiedit26{
+	color: rgb(126,172,81);
+}
+.icon-daifahuo{
+	padding: 5px 6px 0 0;
+	font-size: 13px;
+	color: #696969;
+}
+.icon-tiaoxingma{
+	font-size: 13px;
+	padding-top: 5px;
+	padding-right: 4px;
+	color: #696969;
+}
+.channel.channel-null .icon-daifahuo{
+	padding: 5px 4px 0 0;
+	font-size: 13px;
+	color: #fff;
+}
+.tracking-number-null.tracking-number .icon-tiaoxingma{
+	font-size: 13px;
+	padding-top: 5px;
+	color: #fff;
+}
+/*
+	颜色、字体 start
+ */
+/*
+	table相关布局开始
+ */
+
+.table-header th input{
+	transform: translateY(2px);
+}
+.order-info{
+	font-size: 13px;
+}
+.order-info td > div{
+	height: 60px;
+	-ms-align-items: center;
+	align-items: center;
+	display: flex;
+}
+.order-info .product-image{
+	width: 55px;
+}
+.order-info .product-image img{
+	width: 55px;
+	height: 55px;
+}
+.order-info .product-details{
+	flex:1;
+	display: flex;
+	flex-direction: column;
+}
+.order-info .product-details span{
+	width: 100%;
+	padding:0 0 5px 12px;
+	color: #233;
+}
+.order-info .info-time{
+	display: flex;
+	flex-direction: column;
+	margin-top: 10px;
+}
+.order-info .info-time span{
+	width:100%;
+}
+.order-info .info-buyer,.order-info .info-shipping{
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+}
+.order-info .buyer,.order-info .channel,.order-info .tracking-number{
+	width: 100%;
+	margin-top: 10px;
+	padding-right: 5px;
+}
+.order-info .buyer span,.order-info .channel span,.order-info .tracking-number span{
+	padding:4px 10px 4px 8px;
+	font-size: 12px;
+	border-radius:4px;
+	background-color: #eaeaea;
+	position: relative;
+}
+.order-info .info-edit{
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	justify-content: center;
+}
+.order-info .info-status button{
+	padding:4px 8px;
+	color: #fff;
+	font-size: 12px;
+	border-radius:4px;
+}
+.order-info .tracking-number.tracking-number-null span{
+	padding:4px 10px 4px 8px;
+	font-size: 12px;
+	border-radius:4px;
+	color: #fff;
+	background-color: rgb(217,83,79);
+	position: relative;
+}
+.order-info .channel.channel-null span{
+	padding:4px 10px 4px 8px;
+	font-size: 12px;
+	border-radius:4px;
+	color: #fff;
+	background-color:rgb(217,83,79);
+	position: relative;
+}
+.to_delivery.btn.btn-success{
+	padding: 6px 20px;
+}
+.waiting{
+	background-color: rgb(248,148,6);
+}
+.shipped{
+	background-color: rgb(66,139,202);
+}
+.refund{
+	background-color: rgb(217,83,79);
+}
+/*
+	table相关布局结束
+ */

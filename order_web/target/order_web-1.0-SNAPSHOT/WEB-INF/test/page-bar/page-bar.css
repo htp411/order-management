@@ -1,0 +1,19 @@
+.page-bar{
+	display: flex;
+	-ms-align-items: center;
+	align-items: center;
+	justify-content: flex-end;
+	width: 96%;
+	font-size: 12px;
+}
+.page-bar .input-group{
+	font-size: 12px;
+	width: 100px;
+	margin-left:20px;
+}
+.page-bar .input-group input,.page-bar .input-group span{
+	font-size: 12px;
+}
+.page-bar .input-group span{
+	cursor:pointer;
+}

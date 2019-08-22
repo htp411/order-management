@@ -1,0 +1,47 @@
+.product-container{
+	clear: left;
+	width: 95%;
+	margin:0 auto;
+	align-items: center;
+	display: flex;
+	flex-direction: column;
+	border-bottom: none;
+	position: relative;
+}
+.product-container .product_list{
+	width: 96%;
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	justify-content: center;
+	margin-bottom: 60px;
+	border-bottom: none;
+}
+.product_list .product_oprating{
+	margin-bottom: 15px;
+	width:100%;
+	display: flex;
+}
+.product_list table tbody tr td{
+	vertical-align: middle;
+}
+.product_list table tbody tr td img{
+    width: 80px;
+}
+.product-container .form{
+	align-self: flex-end;
+	display: block;
+}
+.product-container .form .form-inline{
+	float: right;
+	margin-right: 35px;
+}
+.product_list .product-edit{
+	display: flex;
+	-ms-align-items: center;
+	align-items: center;
+	justify-content: center;
+}
+.product_list .product-edit button{
+	margin:0 10px;
+}

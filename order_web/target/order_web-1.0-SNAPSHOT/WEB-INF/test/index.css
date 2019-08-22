@@ -1,0 +1,182 @@
+.order-container,.container{
+	width: 100%;
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	-ms-align-items: center;
+	align-items: center;
+	background-color:rgba(238,241,246,1);
+}
+.container .container-item{
+	width: 85%;
+	margin-top:30px;
+	background-color: #fff;
+	padding:30px 20px;
+	border-radius:15px;
+	box-shadow:2px 2px #ececec;
+}
+.container .quick-operating{
+	display: flex;
+	justify-content: space-between;
+	-ms-align-items: center;
+	align-items: center;
+	height: 140px;
+	padding:0 5px;
+	margin-bottom:30px;
+}
+.container .operating{
+	display: flex;
+	height: 90px;
+	width: 240px;
+	transition: all 0.5s;
+}
+.container .operating:hover{
+	height: 100px;
+	width: 280px;
+	margin:0 20px;
+}
+.container .operating label{
+	height:100%;
+	width: 38%;
+	display: flex;
+	-ms-align-items: center;
+	align-items: center;
+	justify-content: center;
+	flex-direction: column;
+	border-radius:10px 0 0 10px;
+}
+.container .operating label p{
+	margin-top: 5px;
+	color: #fff;
+}
+.container .operating span{
+	flex: 1;
+	display: flex;
+	-ms-align-items: center;
+	align-items: center;
+	height: 100%;
+	margin-left: -1px;
+	border-radius:0 10px 10px 0;
+}
+.container .operating span p{
+	font-size: 24px;
+	color: #fff;
+	cursor: pointer;
+	margin-left: 36px;
+}
+.container .operating .icon-dingdan,.icon-yujing1,.icon-fahuo1,.icon-caigouguocheng{
+	font-size: 35px;
+	color: #fff;
+}
+/*
+	颜色、字体 start
+ */
+.container .order label{
+	background-color: rgb(26,127,194);
+}
+.container .order span{
+	background-color: rgb(57,151,213);
+}
+.container .shipping label{
+	background-color: rgb(126,172,81);
+}
+.container .shipping span{
+	background-color: rgb(141,189,95);
+}
+.container .purchase label{
+	background-color: rgb(255,170,52);
+}
+.container .purchase span{
+	background-color: rgb(255,189,97);
+}
+.container .pre-alert label{
+	background-color: rgb(209,42,38);
+}
+.container .pre-alert span{
+	background-color: rgb(213,85,77);
+}
+.container h4{
+	font-size: 18px;
+	font-weight: normal;
+	font-family: '宋体';
+	padding:0 0 10px 10px;
+	margin-bottom: 15px;
+	border-bottom: 1px solid #efefef;
+}
+table thead tr{
+/* 	background-color: rgba(23,162,184,0.4); */
+	color: #678678;
+	font-weight: bold;
+}
+table{
+	font-family: courier new;
+	color: #696969;
+	letter-spacing: 0.5px;
+}
+
+table .order{
+	font-family: "宋体";
+}
+/*
+	颜色、字体 start
+ */
+/*
+	table相关布局开始
+ */
+
+.table-header th input{
+	transform: translateY(2px);
+}
+.order-info td > div{
+	height: 60px;
+	-ms-align-items: center;
+	align-items: center;
+	display: flex;
+}
+.order-info .product-image{
+	width: 55px;
+}
+.order-info .product-image img{
+	width: 55px;
+}
+.order-info .product-details{
+	flex:1;
+	display: flex;
+	flex-direction: column;
+}
+.order-info .product-details span{
+	width: 100%;
+	padding:0 0 5px 12px;
+	color: #233;
+}
+.order-info .info-buyer{
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+}
+.order-info .buyer{
+	width: 100%;
+	margin-bottom: 5px;
+}
+.order-info .buyer span{
+	padding:4px 8px;
+	font-size: 12px;
+	border-radius:4px;
+	background-color: #e6e6e6;
+	position: relative;
+}
+.order-info .info-status button{
+	padding:4px 8px;
+	color: #fff;
+	font-size: 12px;
+	border-radius:4px;
+}
+.waiting{
+	background-color: rgb(248,148,6);
+}
+.shipped{
+	background-color: rgb(66,139,202);
+}
+/*
+	table相关布局结束
+ */

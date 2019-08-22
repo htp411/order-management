@@ -1,0 +1,60 @@
+/*
+	全局
+ */
+.top-tips{
+	display: flex;
+	-ms-align-items: center;
+	align-items: center;
+	width:100%;
+	height: 45px;
+	border-bottom: 1px solid #ccc;
+	padding-left: 60px;
+	background-color: #fff;
+}
+.top-tips h4{
+	font-size: 14px;
+	color: #666;
+}
+.top-tips h4 span{
+	font-size: 14px;
+	padding:0 4px;
+}
+.btn{
+	height: 28px;
+	font-size: 12px;
+	padding: 4px 12px;
+}
+.search-bar{
+	display: flex;
+	width: 100%;
+}
+.form{
+	display: flex;
+	padding: 10px 0 5px 0;
+	margin-left: 60px;
+	-ms-align-items: center;
+	align-items: center;
+}
+.form-control{
+	font-size: 12px;
+	height:30px;
+	color: #909090;
+	font-weight: normal;
+}
+.form-inline{
+	margin-right: 20px;
+
+}
+.container-item{
+	width: 100%；
+}
+.order-container .container-item{
+	width: 100%;
+	background-color: #fff;
+	padding:30px 20px;
+	box-shadow:2px 2px #ececec;
+}
+.order-container .container-item table{
+	width: 95%;
+	margin:0 auto;
+}

@@ -1,0 +1,194 @@
+/*
+	布局---start
+ */
+.header,.logo,.login{
+	display: flex;
+	align-items: center;
+	font-size:24px;
+}
+.header{
+	justify-content: space-around;
+	width: 100%;
+	height: 70px;
+	box-shadow: 1px 1px 1px #bbb;
+	border-bottom: 1px solid rgba(0,0,0,0.1);
+	position: fixed;
+	z-index: 1000;
+	top: 0;
+	background: #fff;
+}
+.logo{
+	width: 35%;
+}
+.login{
+}
+.logo span:nth-child(1),.login span:nth-child(1){
+	padding-right: 10px;
+}
+.container{
+	margin-top: 70px;
+	background: url(../images/background.jpg) repeat-y;
+	-webkit-background-size: 100% 100%;
+	background-size: 100% 100%;
+	width: 100%;
+	height:1000px;
+	padding-bottom: 500px;
+	transition: all 0.3s;
+}
+.panel{
+	width: 430px;
+	margin: 90px auto;
+}
+.row-fixed{
+	position: fixed;
+	top: 90px;
+	left: 50%;
+	transform: translateX(-215px);
+}
+.panel-footer button{
+	margin-left: 85%;
+}
+.form .btn{
+	float: right;
+	margin-right: 70px;
+	margin-top: -25px;
+}
+.form label{
+	display:flex;
+	align-items: center;
+	color: #a0a0a0;
+	font-weight: normal;
+	padding-left: 5px;
+	margin-left: 90px;
+}
+.form-button{
+}
+.footer{
+	position: fixed;
+	z-index: 1000;
+	bottom: 0;
+	height: 70px;
+	width: 100%;
+	display: flex;
+	justify-content: space-around;
+	align-items: center;
+	background-color: rgba(0,0,0,0.2);
+	font-family: "幼圆","微软雅黑";
+}
+.info{
+	margin-left:-20px;
+	margin-bottom: 20px;
+}
+/*
+	布局---end
+ */
+/*
+	字体、颜色
+ */
+.icon-dingdanguanli{
+	font-size: 35px;
+	color:rgb(255,114,69);
+}
+.title{
+	font-family: Microsoft YaHei UI Regular;
+}
+.self-btn{
+	color: #fff;
+	background-color:rgb(255,114,69);
+	transition: all 0.3s;
+}
+.self-btn:hover{
+	color: #fff;
+	background-color: rgb(255, 93, 66);
+}
+.self-btn:active{
+	color: #fff;
+}
+/*
+	组件
+ */
+.separate{
+	display: inline-block;
+	padding-left: 10px;
+	border-left: 1px solid #ccc;
+}
+.input{
+	margin-bottom: 35px;
+	margin-left: 90px;
+	position: relative;
+}
+.input span input{
+	width: 80%;
+	height: 35px;
+	line-height: 35px;
+}
+.panel-footer{
+	padding: 0 20px;
+	height: 50px;
+	display: flex;
+	align-items: center;
+	justify-content: space-between;
+}
+.input i{
+	top: 6px;
+	right: 75px;
+	position: absolute;
+}
+#themodal-forget-password{
+	margin-top: 80px;
+}
+#themodal-forget-password .modal-dialog,#themodal-error-msg .modal-dialog{
+	width: 450px;
+	transform: translateX(8px);
+}
+#themodal-forget-password .modal-dialog .modal-header{
+	font-size: 16px;
+}
+#themodal-forget-password .modal-dialog .modal-body{
+}
+#themodal-forget-password .modal-dialog .modal-body ul li{
+	list-style: none;
+	margin: 10px;
+}
+#themodal-forget-password .modal-dialog .modal-footer,#themodal-register .modal-dialog .modal-footer{
+	display: flex;
+	justify-content: center;
+	align-items: center;
+}
+#themodal-forget-password .modal-dialog .modal-footer button,#themodal-register .modal-dialog .modal-footer button{
+	margin: 0 5px;
+}
+#themodal-register{
+	margin-top: 95px;
+}
+#error-text{
+	position: fixed;
+	width: 360px;
+	left: 50%;
+	top: 185px;
+	transform: translateX(-190px);
+}
+#themodal-register .modal-dialog .modal-body label{
+	margin: 15px 0;
+}
+#themodal-register .modal-dialog .modal-body label span{
+	font-weight: normal;
+	display: inline-block;
+	width: 60px;
+}#themodal-register .modal-dialog .modal-body label input{
+	 font-weight: normal;
+ }
+#themodal-register .modal-dialog .modal-body label input{
+	margin-left: 5px;
+}
+#themodal-register .modal-dialog .modal-body form{
+	width: 60%;
+	margin: 10px auto;
+	padding: 30px 0 25px 0;
+}
+#themodal-error-msg .modal-dialog{
+
+}
+#error-text{
+	z-index: 1000;
+}

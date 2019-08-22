@@ -1,0 +1,30 @@
+.inventory-container{
+	display: flex;
+	flex-direction: column;
+	width: 91%;
+	margin: 0 auto;
+	padding: 10px 0 30px 0;
+}
+.inventory-container form{
+	align-self: flex-end;
+}
+.inventory-container table{
+	margin-top: 20px;
+}
+.inventory-container table tr td{
+	vertical-align: middle;
+}
+.inventory-container .product-info{
+	display: flex;
+}
+.inventory-container .product-info .other-info{
+	display: flex;
+	flex-direction: column;
+	margin-left: 15px;
+}
+.inventory-container .product-info .other-info span{
+	margin: 4px;
+}
+.inventory-list{
+	margin-bottom: 60px!important;
+}

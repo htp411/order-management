@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="org.htp.order.dao.InventoryDao">
+    <resultMap id="inventoryResultMapper" type="Inventory">
+        <id property="linkSku" column="link_sku"/>
+        <result property="stock" column="stock"/>
+        <result property="updateTime" column="update_time"/>
+        <result property="weekSale" column="week_sale"/>
+        <result property="monthSale" column="month_sale"/>
+        <association property="product" column="link_sku" javaType="Product">
+            <id property="sku" column="p_sku"/>
+            <result property="name" column="p_name"/>
+            <result property="imageUrl" column="p_image_url"/>
+            <result property="price" column="p_price"/>
+        </association>
+    </resultMap>
+    <insert id="insert" parameterType="Inventory">
+        insert into inventory(link_sku,stock,update_time)
+        values (#{linkSku},#{stock},#{updateTime})
+    </insert>
+    <delete id="batchDelete" parameterType="java.util.List">
+        delete from inventory
+        where link_sku in
+        <foreach collection="list" item="idDto" open="(" close=")" separator=",">
+            #{idDto.id}
+        </foreach>
+    </delete>
+    <update id="update" parameterType="Inventory">
+        update inventory set stock = #{stock},update_time = #{updateTime}
+        where link_sku = #{linkSku}
+    </update>
+    <update id="updateStock" parameterType="Inventory">
+        update inventory set stock = #{stock} where link_sku = #{linkSku}
+    </update>
+    <select id="selectAll" resultMap="inventoryResultMapper">
+        select inven.*,pro.sku as p_sku,pro.name as p_name,pro.image_url as p_image_url,pro.price as p_price
+        from inventory as inven
+        left join products as pro
+        on inven.link_sku = pro.sku
+        order by inven.update_time desc
+    </select>
+    <select id="selectBySku" resultMap="inventoryResultMapper" parameterType="String">
+        select inven.*,pro.sku as p_sku,pro.name as p_name,pro.image_url as p_image_url,pro.price as p_price
+        from inventory as inven
+        left join products as pro
+        on inven.link_sku = pro.sku and pro.sku like CONCAT("%",#{_parameter},"%")
+        order by inven.update_time desc
+    </select>
+    <select id="selectInventory" resultMap="inventoryResultMapper" parameterType="String">
+        select * from inventory where link_sku = #{linkSku}
+        order by update_time desc
+    </select>
+    <select id="inventoryWarning" resultType="int">
+        select count(*) from inventory where stock &lt;= 0
+    </select>
+</mapper>
